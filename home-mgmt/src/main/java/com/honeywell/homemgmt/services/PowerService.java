@@ -10,9 +10,9 @@ public interface PowerService {
 
 	PowerDevice addDevices(Long homeId, PowerDevice powerdevice);
 
-	void powerOn(Long homeId, Long deviceId);
+	PowerDevice powerOn(Long homeId, Long deviceId);
 
-	void powerOff(Long homeId, Long deviceId);
+	PowerDevice powerOff(Long homeId, Long deviceId);
 	
 	
 

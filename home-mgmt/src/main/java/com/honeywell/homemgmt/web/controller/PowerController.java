@@ -31,14 +31,14 @@ public class PowerController {
     }
 	
 	@RequestMapping(value = "/homes/{homeId}/devices/{deviceId}/on", method = RequestMethod.PUT)
-    public void powerOn(@PathVariable("homeId") Long homeId, @PathVariable("homeId") Long deviceId) {
-		powerService.powerOn(homeId,deviceId);
+    public PowerDevice powerOn(@PathVariable("homeId") Long homeId, @PathVariable("deviceId") Long deviceId) {
+		return powerService.powerOn(homeId,deviceId);
  
     }
 	
 	@RequestMapping(value = "/homes/{homeId}/devices/{deviceId}/off", method = RequestMethod.PUT)
-    public void powerOff(@PathVariable("homeId") Long homeId, @PathVariable("homeId") Long deviceId) {
-		powerService.powerOff(homeId,deviceId); 
+    public PowerDevice powerOff(@PathVariable("homeId") Long homeId, @PathVariable("deviceId") Long deviceId) {
+		return powerService.powerOff(homeId,deviceId); 
     }
 
 }

@@ -45,17 +45,17 @@ public class PowerServiceImpl implements PowerService{
 	}
 
 	@Override
-	public void powerOn(Long homeId, Long deviceId) {
+	public PowerDevice powerOn(Long homeId, Long deviceId) {
 		PowerDevice device = powerDeviceRepo.findOne(deviceId);	
 		device.setPowerOn(true);
-		powerDeviceRepo.save(device);
+		return powerDeviceRepo.save(device);
 	}
 
 	@Override
-	public void powerOff(Long homeId, Long deviceId) {
+	public PowerDevice powerOff(Long homeId, Long deviceId) {
 		PowerDevice device = powerDeviceRepo.findOne(deviceId);	
 		device.setPowerOn(false);
-		powerDeviceRepo.save(device);
+		return powerDeviceRepo.save(device);
 	}
 
 	
