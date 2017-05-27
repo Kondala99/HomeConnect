@@ -24,6 +24,10 @@ public abstract class Model {
 
 	public void setId(Long id) {
 		this.id = id;
+	}		
+	
+	public String getType(){
+		return this.getClass().getSimpleName();
 	}
 	
 	

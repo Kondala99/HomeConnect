@@ -8,7 +8,11 @@ public interface PowerService {
 	
 	List<PowerDevice> getAllPowerDevices(Long homeId);
 
-	void addDevices(Long homeId, PowerDevice powerdevice);
+	PowerDevice addDevices(Long homeId, PowerDevice powerdevice);
+
+	void powerOn(Long homeId, Long deviceId);
+
+	void powerOff(Long homeId, Long deviceId);
 	
 	
 

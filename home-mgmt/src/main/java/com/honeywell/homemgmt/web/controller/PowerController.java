@@ -21,19 +21,24 @@ public class PowerController {
 	
 
 	@Autowired
-	private PowerService powerService;
+	private PowerService powerService;	
 	
-	@RequestMapping("/powerdevices/{homeId}")
-	public List<PowerDevice> powerDevicelist(@PathVariable("homeId") Long homeId){
-		
-		return powerService.getAllPowerDevices(homeId);
-		
-	}
 	
-	@RequestMapping(value = "/home/{homeId}/device", method = RequestMethod.POST)
-    public void addDevices(@PathVariable("homeId") Long homeId, @RequestBody PowerDevice device) {
-		powerService.addDevices(homeId, device);
+	@RequestMapping(value = "/homes/{homeId}/devices", method = RequestMethod.POST)
+    public PowerDevice addDevices(@PathVariable("homeId") Long homeId, @RequestBody PowerDevice device) {
+		return powerService.addDevices(homeId, device);
  
+    }
+	
+	@RequestMapping(value = "/homes/{homeId}/devices/{deviceId}/on", method = RequestMethod.PUT)
+    public void powerOn(@PathVariable("homeId") Long homeId, @PathVariable("homeId") Long deviceId) {
+		powerService.powerOn(homeId,deviceId);
+ 
+    }
+	
+	@RequestMapping(value = "/homes/{homeId}/devices/{deviceId}/off", method = RequestMethod.PUT)
+    public void powerOff(@PathVariable("homeId") Long homeId, @PathVariable("homeId") Long deviceId) {
+		powerService.powerOff(homeId,deviceId); 
     }
 
 }

@@ -29,7 +29,7 @@ public class PowerServiceImpl implements PowerService{
 	}
 
 	@Override
-	public void addDevices(Long homeId, PowerDevice device) {
+	public PowerDevice addDevices(Long homeId, PowerDevice device) {
 		
 		Home home = homeRepo.findOne(homeId);
 		
@@ -39,7 +39,23 @@ public class PowerServiceImpl implements PowerService{
 		
 		homeRepo.save(home);
 		
+		return device;
 		
+		
+	}
+
+	@Override
+	public void powerOn(Long homeId, Long deviceId) {
+		PowerDevice device = powerDeviceRepo.findOne(deviceId);	
+		device.setPowerOn(true);
+		powerDeviceRepo.save(device);
+	}
+
+	@Override
+	public void powerOff(Long homeId, Long deviceId) {
+		PowerDevice device = powerDeviceRepo.findOne(deviceId);	
+		device.setPowerOn(false);
+		powerDeviceRepo.save(device);
 	}
 
 	

@@ -12,7 +12,7 @@ public class Television extends PowerDevice {
 	
 	private String wifi;
 	
-	private String standBy;
+	private Boolean standBy;
 
 	
 
@@ -40,11 +40,11 @@ public class Television extends PowerDevice {
 		this.wifi = wifi;
 	}
 
-	public String getStandBy() {
+	public Boolean isStandBy() {
 		return standBy;
 	}
 
-	public void setStandBy(String standBy) {
+	public void setStandBy(Boolean standBy) {
 		this.standBy = standBy;
 	}
 	

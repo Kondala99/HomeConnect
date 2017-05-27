@@ -1,31 +1,35 @@
 package com.honeywell.homemgmt.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @Entity
-public class PowerDevice extends Model{
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@JsonTypeInfo(
+		use = JsonTypeInfo.Id.NAME,
+		include = JsonTypeInfo.As.PROPERTY,
+		property = "type")
+@JsonSubTypes({
+		@JsonSubTypes.Type(value = Television.class, name = "Television"),
+		@JsonSubTypes.Type(value = AirConditioner.class, name = "AirConditioner"),
+		@JsonSubTypes.Type(value = WashingMachine.class, name = "WashingMachine")})
+public abstract class PowerDevice extends Model{
 
-	private String powerOn;
-	
-	private String powerOff;
-	
+	private Boolean powerOn;
 	
 
-	public String getPowerOn() {
-		return powerOn;
-	}
-
-	public void setPowerOn(String powerOn) {
+	public void setPowerOn(Boolean powerOn) {
 		this.powerOn = powerOn;
 	}
 
-	public String getPowerOff() {
-		return powerOff;
-	}
 
-	public void setPowerOff(String powerOff) {
-		this.powerOff = powerOff;
-	}
+	public Boolean isPowerOn() {
+		return powerOn;
+	}	
 	
 	
 
