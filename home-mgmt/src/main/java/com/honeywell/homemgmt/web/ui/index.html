@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="demo">
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="hello.js"></script>
+    	<!script src="power.js"></script-->
+    	<!script src="security.js"></script-->
+    	<!script src="userlist.js"></script-->
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+			<p>The ID is {{greeting.id}}</p>
+			<p>The content is {{greeting.content}}</p>
+		</div>
+
+	<h1> Home Security Devices Status</h1>
+		<table>
+		  <tr ng-repeat="x in security">
+		    <td>{{ x.name }}</td>
+		    <td>{{ x.status }}</td>
+		  </tr>
+		</table>
+	<h1> Home Power Devices Status</h1>
+		<table>
+		  <tr ng-repeat="y in power">
+		    <td>{{ y.name }}</td>
+		    <td>{{ y.status }}</td>
+		  </tr>
+		</table>
+
+	<h1> Users</h1>
+		<table>
+		  <tr ng-repeat="y in users">
+		    <td>{{ y.name }}</td>
+
+		  </tr>
+		</table>
+	</body>
+
+</html>
