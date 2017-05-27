@@ -1,4 +1,4 @@
-package com.honeywell.homemgmt;
+package com.honeywell.homemgmt.config;
 
 import org.springframework.context.annotation.Configuration;
 

@@ -1,5 +1,8 @@
 package com.honeywell.homemgmt.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class AirConditioner extends PowerDevice{
 	
 	
