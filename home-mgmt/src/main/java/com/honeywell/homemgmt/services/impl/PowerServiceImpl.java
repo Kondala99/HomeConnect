@@ -3,7 +3,7 @@ package com.honeywell.homemgmt.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.honeywell.homemgmt.dao.HomeRepository;
 import com.honeywell.homemgmt.dao.PowerDeviceRepository;
@@ -11,7 +11,7 @@ import com.honeywell.homemgmt.model.Home;
 import com.honeywell.homemgmt.model.PowerDevice;
 import com.honeywell.homemgmt.services.PowerService;
 
-@Component
+@Service
 public class PowerServiceImpl implements PowerService{
 	
 	@Autowired
