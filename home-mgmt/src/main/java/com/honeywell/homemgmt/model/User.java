@@ -4,9 +4,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class UserEntity extends Model {
+public class User extends Model {
 	
-	public UserEntity(String name) {
+	public User(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
