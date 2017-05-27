@@ -9,10 +9,7 @@ import javax.persistence.OneToMany;
 
 public class Home extends Model{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
+
 	@OneToMany
 	private List<PowerDevice> devices;
 	
