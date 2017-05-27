@@ -21,8 +21,8 @@ public class PowerController {
 	@Autowired
 	private PowerService powerService;
 	
-	@RequestMapping("/powerdevices")
-	public List<PowerDevice> powerDevicelist(Long homeId){
+	@RequestMapping("/powerdevices/{homeId}")
+	public List<PowerDevice> powerDevicelist(@PathVariable("homeId") Long homeId){
 		
 		return powerService.getAllPowerDevices(homeId);
 		
