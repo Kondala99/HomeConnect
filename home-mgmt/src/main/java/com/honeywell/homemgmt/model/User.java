@@ -6,11 +6,7 @@ import javax.persistence.Id;
 
 public class User extends Model {
 	
-	public User(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;

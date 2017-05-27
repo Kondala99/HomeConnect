@@ -15,12 +15,7 @@ public class HelloController {
 	@Autowired
 	ModelRepository repo;
 	
-	@RequestMapping(value="/hello" ,method=RequestMethod.GET)
-	Model hello(){
-		Model model = new Model("abc");
-		repo.save(model);
-		
-		return model;
-	}
+
+	
 
 }
